@@ -14,7 +14,7 @@ class Queue{
 
     //出队
     dequeue() {
-        let b = [];
+        let b = new Array;
         for(let i = 0; i < this.length; i++){
             b.push(this.data.pop());
         }
