@@ -19,12 +19,13 @@
 // console.log(z);
 
 let a = new Array();
-let n = 6;
+let n = 5;
 let i,j,k;
 
 a[0] = new Array();
 a[0][0]=1;
 
+//构造二维数组，根据上一行计算这一行
 for(i = 1; i < n; i++){
     a[i] = new Array();
     a[i][0]=i+1;
@@ -32,6 +33,7 @@ for(i = 1; i < n; i++){
     a[i][j] = i+1;   
 }
 
+//先打印空格再打印数字
 let s =""
 for(i = 0; i < n; i++){
     j = n-i;
