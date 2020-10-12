@@ -9,6 +9,6 @@ for(i = 0; i < 6;i++){
     for(let k = j; k < red.length; k++) red[k] = red[k+1];
     red.length--;
 }
-s[i] = Math.ceil(Math.random()*(16));
+s[i] = Math.floor(Math.random()*(16))+1;
 
 console.log(s);
