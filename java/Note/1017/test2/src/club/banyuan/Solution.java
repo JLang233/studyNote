@@ -22,21 +22,21 @@ public class Solution {
     public boolean parseBoolExpr(String expression) {
         Stack<Character> op = new Stack<>();//新建一个栈
         String temp = "";//当前字符串
-        for(int i = 0; i < expression.length(); i++){
+        for(int i = 0; i < expression.length(); i++){//遍历整字符串
             char c = expression.charAt(i);//.char是字符串中的一个方法，获取位置i的字符
-            if(c == ')'){
+            if(c == ')'){//当遇到')'，就向前找'('
                 while(op.peek() != '('){
                     temp = op.pop() + temp;
-                }
-                op.pop();
-                char operation = op.pop();
-                op.push(isBool(temp, operation));//判断
-                temp = "";//置空
+                }//找到'('
+                op.pop();//将'('弹出
+                char operation = op.pop();//获取'('前当符号，即判断符
+                op.push(isBool(temp, operation));//此时temp就是中间当字段，operation是判断符，传入isBool进行判断，返回t or f
+                temp = "";//置空准备下一次
             } else if(c != ','){
-                op.push(c);
+                op.push(c);//没有遇到')'时，将字符入栈
             }
         }
-        if(op.peek() == 't'){
+        if(op.peek() == 't'){//最终栈内只剩下一个结果
             return true;
         }
         return false;
@@ -68,7 +68,6 @@ public class Solution {
                 return 't';//没有f（全为t），返回t
             }
         }
-        return 'f';
-
+        return 'f';//根据java语法，必须保证要有return，所以在此补一个return，t or f不重要
     }
 }
