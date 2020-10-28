@@ -4,6 +4,13 @@
 
 ![img](../img/java-coll.png)
 
+Set和List的区别
+1. Set 接口实例存储的是无序的，不重复的数据。List 接口实例存储的是有序的，可以重复的元素。
+
+2. Set检索效率低下，删除和插入效率高，插入和删除不会引起元素位置改变 <实现类有HashSet,TreeSet>。
+
+3. List和数组类似，可以动态增长，根据实际存储的数据的长度自动增长List的长度。查找元素效率高，插入删除效率低，因为会引起其他元素位置改变 <实现类有ArrayList,LinkedList,Vector> 。
+
 ### ArrayList
 
 数组实现的一个有序的列表，具备数组的优缺点：
@@ -83,12 +90,22 @@ public String toString() {
 
 ### 迭代器
 
+用来遍历集合里的元素
+
 ```java
+//用迭代器
 Iterator<String> it = list.iterator();
-        while(it.hasNext()){
-            System.out.println(it.next());
-        }
+while(it.hasNext()){
+    System.out.println(it.next());
+}
+//用foreach
+for(String str:list){
+    System.out.prinln(str);
+}
+
 ```
+
+
 ## 单例模式
 
 单例模式（Singleton Pattern）是 Java 中最简单的设计模式之一。这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。
