@@ -35,7 +35,7 @@ get(int index) 返回此列表中指定位置上的元素。
 
 ### LinkedList
 
-    List<String> list = new LinkedListList<>();
+    List<String> list = new LinkedList<>();
 
 双向链表实现的一个有序的列表，又实现了 Queue，又是一个队列或者栈
 
