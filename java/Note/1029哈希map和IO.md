@@ -65,37 +65,43 @@ class Solution {
 }
 ```
 
+### 力扣练习2
 
+![png](../img/力扣129_1.png)
+![png](../img/力扣129_2.png)
 
-菜鸡如我终于有道会做的题了。本结点的值乘10加到左右结点上，再递归，把返回的左右结点值相加就是结果了
+今天这题不是很难，用递归就可以了。本结点的值乘10加到左右结点上，再递归，把返回的左右结点值相加就是结果了
 
-执行用时：0 ms, 在所有 Java 提交中击败了100.00%的用户
-
-内存消耗：36.1 MB, 在所有 Java 提交中击败了91.85%的用户
-
-```kotlin
+```java
 class Solution {
     public int sumNumbers(TreeNode root) {
+        //如果结点为空，则返回0
         if(root == null){
             return 0;
         }
         int sum = 0;
+        //如果为叶子结点，则返回此结点的值
         if(root.left == null && root.right == null){
             return root.val;
         }else {
+            //否则把此结点的值乘10再加到下一个结点上
             root.val *= 10;
             if(root.left != null){
                 root.left.val += root.val;
+                //然后统计子结点返回的值
                 sum += sumNumbers(root.left);
             }
             if(root.right != null){
                 root.right.val += root.val;
                 sum += sumNumbers(root.right);
             }
+            //把计算到的总和返回
             return sum;
         }
 
     }
 }
 ```
+
+![png](../img/力扣129_3.png)
 
