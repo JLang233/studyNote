@@ -141,3 +141,8 @@ git pull origin master
 git merge dev
 git push origin master
 ```
+
+
+当Git无法自动合并分支时，就必须首先解决冲突。解决冲突后，再提交，合并完成。
+
+用git log --graph命令可以看到分支合并图。
